@@ -8,31 +8,113 @@
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-    <div id="user-form">
-        <form>
-            <h2>Добавление игрока</h2>
-            <label>Имя игрока</label>
-            <input type="text" name="name" value="">
-            <label>Пароль игрока</label>
-            <input type="text" name="password" value="">
-            <hr>
-            <button id="save-user">Сохранить</button>
-        </form>
-    </div>
-    <div id="user-put-form">
-        <form>
-        </form>
-    </div>
-    <div class="experiment"></div>
-    <h1>Список игроков (<span th:text="${usersCount}">0</span>)</h1>
-    <button id="show-add-user-form">Добавить игрока</button>
-    <br><br>
-    <div id="user-list">
-        <div th:each="user : ${users}">
-            <a href="#" class="user-link" th:attr="data-id=${user.id}" th:text="${user.name}"></a>
-        </div>
-    </div>
-    <p>Версия сайта:</p>
-    <p th:text="${someParameter}"></p>
+<div class="nameTheGame">
+    <h3>Игра „Устный счет“</h3>
+</div>
+<div id="pageContent">
+<div id="gameProgress">
+    <h3>Всего задач хх</h3>
+    <h3>Правильно хх</h3>
+    <h3>Не правильно хх</h3>
+    <h3>Осталось хх</h3>
+</div>
+<div id="timer">
+    <p>Время с начала игры</p>
+    <input type="text" name="inputTimer"  id="inputTimerId" value="">
+</div>
+<div id="taskText">
+    <h2>12 + 34 = </h2>
+</div>
+<div id="dialingButtons">
+    <p>Составте ответ</p>
+    <button id="button7">7</button>
+    <button id="button8">8</button>
+    <button id="button9">9</button>
+    <button id="button4">4</button>
+    <button id="button5">5</button>
+    <button id="button6">6</button>
+    <button id="button1">1</button>
+    <button id="button2">2</button>
+    <button id="button3">3</button>
+    <button id="button0">0</button>
+    <button id="buttonDot">.</button>
+    <button id="buttonMinus">-</button>
+</div>
+<input type="text" name="result"  id="resultId" value="">
+<button id="sendId">Отправить</button>
+</div>
+
+<div id="choiceLogin">
+    <form id="choiceLoginForm">
+        <!--<h2>Игра „Устный счет“</h2>-->
+        <button id="enterId">Вход</button>
+        <button id="registrationId">Регистрация</button>
+        <button id="gameWithoutRegistrationId">Играть без регистрации</button>
+    </form>
+</div>
+
+<div id="registrationWindow">
+    <form id="registrationForm">
+        <h3>Регистрация</h3>
+        <label>Имя игрока</label>
+        <input type="text" name="name" value="">
+        <label>Пароль игрока</label>
+        <input type="text" name="password" value="">
+        <hr>
+        <button id="saveUser">Далее</button>
+    </form>
+</div>
+
+<div id="inputWindow">
+    <form id="inputForm">
+        <h3>Авторизуйтесь</h3>
+        <label>Имя игрока</label>
+        <input type="text" name="name" value="">
+        <label>Пароль игрока</label>
+        <input type="text" name="password" value="">
+        <hr>
+        <button id="searchUser">Далее</button>
+    </form>
+</div>
+
+<div id="gameSettings">
+    <form id="gameSettingsForm">
+        <p>Выбирете арифметические действия.</p>
+        <p><input type="checkbox" name="check1" value="1"> * </p>
+        <p><input type="checkbox" name="check2" value="2" checked> + </p>
+        <p><input type="checkbox" name="check3" value="3"> - </p>
+        <p><input type="checkbox" name="check4" value="4"> / </p>
+        <label>Укажите максимальное число в задачах</label>
+        <input type="text" name="maximumValue" value="">
+        <hr>
+        <button id="startGame">Играть</button>
+    </form>
+</div>
+
+
+    <!--    <div id="user-form">-->
+<!--        <form>-->
+<!--            <h2>Добавление игрока</h2>-->
+<!--            <label>Имя игрока</label>-->
+<!--            <input type="text" name="name" value="">-->
+<!--            <label>Пароль игрока</label>-->
+<!--            <input type="text" name="password" value="">-->
+<!--            <hr>-->
+<!--            <button id="save-user">Сохранить</button>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--    <div id="user-put-form">-->
+<!--        <form>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--    <div class="experiment"></div>-->
+<!--    <h1>Список игроков (<span th:text="${usersCount}">0</span>)</h1>-->
+<!--    <button id="show-add-user-form">Добавить игрока</button>-->
+<!--    <br><br>-->
+<!--    <div id="user-list">-->
+<!--        <div th:each="user : ${users}">-->
+<!--            <a href="#" class="user-link" th:attr="data-id=${user.id}" th:text="${user.name}"></a>-->
+<!--        </div>-->
+<!--    </div>-->
 </body>
 </html>
