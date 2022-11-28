@@ -37,19 +37,40 @@ public class UserController {
         if (userRepository.count() == 0) {
             user.setId(1);
         }
+        boolean similarName = false;
+        for(User userBase : userRepository.findAll()){
+            if(userBase.getName().equals(user.getName())){
+                similarName = true;
+                break;
+            }
+        }
+        if(similarName){
+            return -1;
+        } else {
 //        User newUser = userRepository.save(putDeadline(user));
-        User newUser = userRepository.save(user);
+            User newUser = userRepository.save(user);
 
-        return newUser.getId();
+            return newUser.getId();
+        }
     }
 
-    @GetMapping("/users/{id}")
+    /*@GetMapping("/users/{id}")
     public ResponseEntity<?> getUser(@PathVariable int id) {
         Optional<User> optionalUser = userRepository.findById(id);
         if (!optionalUser.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         return new ResponseEntity<>(optionalUser.get(), HttpStatus.OK);
+    }*/
+
+    @GetMapping("/users/{name}")
+    public ResponseEntity<?> getUser(@PathVariable String name) {
+        for(User userFind : userRepository.findAll()){
+            if(userFind.getName().equals(name)){
+                return new ResponseEntity<>(userFind, HttpStatus.OK);
+            }
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
 
     @DeleteMapping("/users/{id}")
