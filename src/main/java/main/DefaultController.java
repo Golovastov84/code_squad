@@ -1,5 +1,7 @@
 package main;
 
+import main.model.Game;
+import main.model.GameRepository;
 import main.model.User;
 import main.model.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +18,10 @@ public class DefaultController {
     @Autowired
     UserRepository userRepository;
 
-    @Value("${someParameter}")
-    private Integer someParameter;
+    @Autowired
+    GameRepository gameRepository;
+
+
 
     @RequestMapping("/")
     public String index(Model model){
@@ -26,9 +30,14 @@ public class DefaultController {
         for(User user : userIterable){
             users.add(user);
         }
+        Iterable<Game> gameIterable = gameRepository.findAll();
+        ArrayList<Game> games = new ArrayList<>();
+        for(Game game : gameIterable){
+            games.add(game);
+        }
+
         model.addAttribute("users", users);
-        model.addAttribute("usersCount", users.size());
-        model.addAttribute("someParameter", someParameter);
+        model.addAttribute("games", games);
         return "index";
     }
 }

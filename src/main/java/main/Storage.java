@@ -1,6 +1,7 @@
 package main;
 
 
+import main.model.Game;
 import main.model.User;
 
 import java.util.ArrayList;
@@ -10,7 +11,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Storage {
 
     private static int currentId = 1;
+    
+    private static int currentGameId = 1;
     private static final ConcurrentHashMap<Integer, User> users = new ConcurrentHashMap<>();
+    
+    private static final ConcurrentHashMap<Integer, Game> games = new ConcurrentHashMap<>();
 
     public static List<User> getAllUsers() {
         ArrayList<User> usersList = new ArrayList<>();
@@ -56,6 +61,48 @@ public class Storage {
     public static int dellAllUser() {
         users.clear();
         currentId = 1;
+        return 0;
+    }
+    
+//    для game
+
+    public static List<Game> getAllGames() {
+        ArrayList<Game> gamesList = new ArrayList<>();
+        gamesList.addAll(games.values());
+        return gamesList;
+    }
+
+    public static int addGame(Game game) {
+        int id = currentGameId++;
+        game.setId(id);
+        games.put(id, game);
+        return id;
+    }
+
+    public static int setGame(Game game) {
+        int IdGame = game.getId();
+        games.put(IdGame, game);
+        return IdGame;
+    }
+
+    public static Game getGame(int gameId) {
+        if (games.containsKey(gameId)) {
+            return games.get(gameId);
+        }
+        return null;
+    }
+
+    public static int dellGame(int gameId) {
+        if (games.containsKey(gameId)) {
+            games.remove(gameId);
+            return gameId;
+        }
+        return 0;
+    }
+
+    public static int dellAllGame() {
+        games.clear();
+        currentGameId = 1;
         return 0;
     }
 }

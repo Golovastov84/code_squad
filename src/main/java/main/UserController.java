@@ -1,5 +1,7 @@
 package main;
 
+import main.model.Game;
+import main.model.GameRepository;
 import main.model.User;
 import main.model.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +19,12 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    public UserController(UserRepository userRepository) {
+    @Autowired
+    private GameRepository gameRepository;
+
+    public UserController(UserRepository userRepository, GameRepository gameRepository) {
         this.userRepository = userRepository;
+        this.gameRepository = gameRepository;
     }
 
     @GetMapping("/users")
@@ -53,15 +59,6 @@ public class UserController {
             return newUser.getId();
         }
     }
-
-    /*@GetMapping("/users/{id}")
-    public ResponseEntity<?> getUser(@PathVariable int id) {
-        Optional<User> optionalUser = userRepository.findById(id);
-        if (!optionalUser.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-        return new ResponseEntity<>(optionalUser.get(), HttpStatus.OK);
-    }*/
 
     @GetMapping("/users/{name}")
     public ResponseEntity<?> getUser(@PathVariable String name) {
@@ -103,9 +100,64 @@ public class UserController {
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
-//    public static Task putDeadline(Task task) {
-//        task.setDeadline(task.getYearTask(), task.getMonthTask(), task.getDayTask());
-//        return task;
-//    }
+//    для game
+
+    @GetMapping("/games")
+    public List<Game> ListGame() {
+        Iterable<Game> gameIterable = gameRepository.findAll();
+
+        ArrayList<Game> games = new ArrayList<>();
+        for (Game game : gameIterable) {
+            games.add(game);
+        }
+        return games;
+    }
+
+    @PostMapping("/games")
+    public int addGame(Game game) {
+        if (gameRepository.count() == 0) {
+            game.setId(1);
+        }
+        Game newGame = gameRepository.save(game);
+        return newGame.getId();
+    }
+
+    @GetMapping("/games/{id}")
+    public ResponseEntity<?> getGame(@PathVariable int id) {
+        Optional<Game> optionalGame = gameRepository.findById(id);
+        if (!optionalGame.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+        return new ResponseEntity<>(optionalGame.get(), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/games/{id}")
+    public ResponseEntity<?> dellGame(@PathVariable int id) {
+        Optional<Game> optionalGame = gameRepository.findById(id);
+        if (!optionalGame.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+        gameRepository.deleteById(id);
+        return new ResponseEntity<>(gameRepository.count(), HttpStatus.OK);
+    }
+
+    @PutMapping("/games/{id}")
+    public ResponseEntity<?> putGameId(Game newGame, @PathVariable int id) {
+        Optional<Game> optionalGame = gameRepository.findById(id);
+        if (!optionalGame.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+        gameRepository.save(newGame);
+        return new ResponseEntity<>(newGame, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/games")
+    public ResponseEntity dellAllGames() {
+        if (gameRepository.count() == 0) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The list is already empty.");
+        }
+        gameRepository.deleteAll();
+        return new ResponseEntity<>(null, HttpStatus.OK);
+    }
 
 }
