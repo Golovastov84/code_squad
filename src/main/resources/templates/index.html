@@ -11,8 +11,6 @@
 <div class="nameTheGame">
     <h3>Игра „Устный счет“</h3>
 </div>
-<div id="pageContent">
-
 <div id="choiceLogin">
     <form id="choiceLoginForm">
         <!--<h2>Игра „Устный счет“</h2>-->
@@ -21,6 +19,55 @@
         <button id="gameWithoutRegistrationId">Играть без регистрации</button>
     </form>
 </div>
+
+<!--стартовая-->
+<div id="registrationWindow">
+    <form id="registrationForm">
+        <h3>Регистрация</h3>
+        <label>Имя игрока</label>
+        <input type="text" name="name" id="registrationNameId" value="">
+        <label>Пароль игрока</label>
+        <input type="text" name="password" id="registrationPasswordId" value="">
+        <label>Повторите ввод пароля</label>
+        <input type="text" name="passwordVerification" id="registrationVerificationId" value="">
+        <hr>
+        <button id="saveUser">Далее</button>
+        <button class="goHome">Назад</button>
+    </form>
+</div>
+
+
+<div id="inputWindow">
+    <form id="inputForm">
+        <h3>Авторизуйтесь</h3>
+        <label>Имя игрока</label>
+        <input type="text" name="name" id="nameId" value="">
+        <label>Пароль игрока</label>
+        <input type="text" name="password" id="passwordId" value="">
+        <hr>
+        <button id="searchUser">Далее</button>
+        <button class="goHome">Назад</button>
+    </form>
+</div>
+
+<div id="gameSettings">
+    <form id="gameSettingsForm">
+        <p>Выбирете арифметические действия.</p>
+        <p><input type="checkbox" name="check1" value=" * "> * </p>
+        <p><input type="checkbox" name="check2" value=" + "> + </p>
+        <p><input type="checkbox" name="check3" value=" - "> - </p>
+        <p><input type="checkbox" name="check4" value=" / "> / </p>
+        <label>Укажите максимальное число в задачах</label>
+        <input type="text" name="maximumValue" id="maximumValueId" value="10">
+        <label>Количество задач</label>
+        <input type="text" name="numberTasks" id="numberTasksId" value="10">
+        <button id="startGame">Играть</button>
+        <button class="goHome">На стартовую</button>
+    </form>
+</div>
+
+<!--окно игры-->
+<div id="pageContent">
 <div id="gameProgress">
     <div class="partProgress">
     <label>Всего задач</label>
@@ -67,54 +114,12 @@
     <button id="buttonMinus" value="-">-</button>
 </div>
 <input type="text" name="result"  id="resultId" value="">
-
-
-
-    <button id="sendId">Отправить</button>
+<button id="sendId">Отправить</button>
 </div>
 
 
 
-<div id="registrationWindow">
-    <form id="registrationForm">
-        <h3>Регистрация</h3>
-        <label>Имя игрока</label>
-        <input type="text" name="name" id="registrationNameId" value="">
-        <label>Пароль игрока</label>
-        <input type="text" name="password" id="registrationPasswordId" value="">
-        <label>Повторите ввод пароля</label>
-        <input type="text" name="passwordVerification" id="registrationVerificationId" value="">
-        <hr>
-        <button id="saveUser">Далее</button>
-    </form>
-</div>
 
-<div id="inputWindow">
-    <form id="inputForm">
-        <h3>Авторизуйтесь</h3>
-        <label>Имя игрока</label>
-        <input type="text" name="name" id="nameId" value="">
-        <label>Пароль игрока</label>
-        <input type="text" name="password" id="passwordId" value="">
-        <hr>
-        <button id="searchUser">Далее</button>
-    </form>
-</div>
-
-<div id="gameSettings">
-    <form id="gameSettingsForm">
-        <p>Выбирете арифметические действия.</p>
-        <p><input type="checkbox" name="check1" value=" * "> * </p>
-        <p><input type="checkbox" name="check2" value=" + "> + </p>
-        <p><input type="checkbox" name="check3" value=" - "> - </p>
-        <p><input type="checkbox" name="check4" value=" / "> / </p>
-        <label>Укажите максимальное число в задачах</label>
-        <input type="text" name="maximumValue" id="maximumValueId" value="10">
-        <label>Количество задач</label>
-        <input type="text" name="numberTasks" id="numberTasksId" value="10">
-        <button id="startGame">Играть</button>
-    </form>
-</div>
 
 <div id="gameResults">
     <form id="gameResultsForm">
@@ -132,8 +137,8 @@
             <input type="text" name="progress"  id="wrongFinalId" value="" readonly> <!--<h3>Не правильно хх</h3>-->
         </div>
         <button id="safeGameResults">Сохранить результаты</button>
-        <button id="newGame">Играть ещё</button>
-        <button id="home">На стартовую</button>
+        <button class="newGame">Играть ещё</button>
+        <button class="goHome">На стартовую</button>
     </form>
 </div>
 
@@ -142,6 +147,14 @@
         <p>Вы уверены, что хотите сбросить текущую игру?</p>
         <button id="yesResetId">Да</button>
         <button id="noResetId">Нет</button>
+    </form>
+</div>
+
+<div id="areYouSureClearLogin">
+    <form id="areYouSureClearLoginForm">
+        <p>Вы уверены, что хотите выйти из личной страницы?</p>
+        <button id="yesClearLogin">Да</button>
+        <button id="noClearLogin">Нет</button>
     </form>
 </div>
 
@@ -180,6 +193,7 @@
         <div class="text_header">
             % завершения
         </div>
+
     </div>
 
     <div class="game-list-data">
@@ -202,13 +216,12 @@
         <div class="text_header"
             th:text=${game.completeness}>
         </div>
-        <!--<p class="game-link" th:attr="data-id=${game.id}"
-           th:text="${game.nameUser + ' ' + game.startTime + ' ' + game.timer + ' ' + game.complexity
-            + ' ' + game.result + ' ' + game.completeness}"></p>-->
+    </div>
+    </div>
+        <button class="goHome">На стартовую</button>
+        <button class="newGame">Играть ещё</button>
+    </div>
 
-    </div>
-    </div>
-    </div>
 </div>
 
 

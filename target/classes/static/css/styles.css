@@ -21,9 +21,12 @@ body{
 	width:1130px;
 	height:80px;
 	float:left;
+	float:left;
 	}
 
 #pageContent{
+    display: none;
+    /*display: flex;*/
     background-color:#F0FFF0;
     border-radius: 25px;
     position:absolute;
@@ -42,8 +45,9 @@ body{
 /*начало формы итогов игры*/
 
 #game-list{
-    display: flex;
-    border-radius: 25px;
+    display: none;
+    /*display: flex;*/
+    /*border-radius: 25px;*/
     /*background-color:#98FB98;*/
     width:1000px;
     /*height:1200px;*/
@@ -59,27 +63,29 @@ body{
 #table_header{
    /* background-color:#EEE8AA;*/
     width:980px;
-    height:40px;
+    height:50px;
     float: left;
     clear:left;
 }
 
 .text_header{
     /*background-color:#B0E0E6;*/
-    border: 2px solid #696969;
+    border: 1px solid #696969;
+    padding: 2px;
     font-size: 20px;
     text-align:center;
     /*text-align: left;*/
     /*width:80px;*/
     float: left;
     width: 150px;
-    height: 40px;
+    height: 45px;
 }
 
 .game-list-data{
     /*background-color:#D8BFD8;*/
-    overflow-x: auto;
+    overflow-y: auto;
     width:980px;
+    height:650px;
     clear: left;
     float: left;
 }
@@ -168,8 +174,12 @@ div[class="partResults"]{
     height:80px;
 }
 
-#resetGame, #yesResetId{
+#resetGame, #yesResetId, #yesClearLogin{
     background-color:#FFA07A;
+}
+
+#noResetId, #noClearLogin{
+    background-color:#98FB98;
 }
 
 #clearId{
@@ -216,29 +226,41 @@ div[class="partResults"]{
     top:390px;
 }
 
-#pageContent{
-display: none;
-}
+
 
 #choiceLogin{
-    display: none;
+    display: flex;
+    /*display: none;*/
     height: 300px;
 }
 
-#choiceLogin, #registrationWindow, #inputWindow, #gameSettings, #gameResults, #areYouSure{
+#choiceLogin, #registrationWindow, #inputWindow, #gameSettings, #gameResults, #areYouSure, #areYouSureClearLogin{
     background-color: #B0E0E6;
     border-radius: 25px;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top:170px;
+    top:100px;
     left:500px;
     width: 300px;
 }
 
+/*#areYouSureClearLogin{
+    background-color: #B0E0E6;
+    display: none;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top:90px;
+    left:300px;
+    width:700px;
+    height:760px;
+}*/
+
 
 #choiceLoginForm > button, #registrationForm > button, #inputForm > button, #gameSettingsForm > button,
-#gameResultsForm > button, #areYouSureForm > button{
+#gameResultsForm > button, #areYouSureForm > button, #areYouSureClearLoginForm > button, .game-list_float > button{
     align-items: center;
     border-radius: 5px;
     font-size: 20px;
@@ -250,9 +272,7 @@ display: none;
     clear:left;
 }
 
-#noResetId {
-    background-color:#98FB98;
-}
+
 
 #registrationForm > label, #inputForm > label, #gameSettingsForm > label,
 #gameResultsForm > label{
@@ -277,14 +297,14 @@ display: none;
     font-size: 20px;
 }
 
-#registrationWindow, #inputWindow, #gameResults, #areYouSure{
+#registrationWindow, #inputWindow, #gameResults, #areYouSure, #areYouSureClearLogin{
     display: none;
-    height: 520px;
+    height: 620px;
 }
 
 #gameSettings{
     display: none;
-    height: 700px;
+    height: 750px;
 }
 
 checkbox{

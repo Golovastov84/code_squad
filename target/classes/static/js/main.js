@@ -1,5 +1,6 @@
 $(function(){
 
+    var objectPage = document;
     var timerTime = 0;
     var startTime = new Date();
     var idName = -1;
@@ -111,6 +112,31 @@ $(function(){
         return false;
     });
 
+
+    $('.goHome').click(function(){
+        objectPage = this.parentNode.parentNode;
+         /*alert(objectPage.value);*/
+        $(objectPage).css({display: 'none'});
+        $('#areYouSureClearLogin').css({display: 'flex'});
+        return false;
+    });
+
+     $('#yesClearLogin').click(function(){
+        resetGameData();
+        checks = [];
+        totalTasksFinal, correctlyFinal, wrongFinal = 0;
+        name, password, passwordVerification = "";
+        /*$(objectPage).css({display: 'none'});
+        $('#choiceLogin').css({display: 'flex'});*/
+        location.reload();
+       /*return false;*/
+    });
+    $('#noClearLogin').click(function(){
+        $(objectPage).css({display: 'flex'});
+        $('#areYouSureClearLogin').css({display: 'none'});
+        return false;
+    });
+
     $('input[type="checkbox"]').change(function()
     {
       if(this.checked == true)
@@ -166,6 +192,9 @@ $('#yesResetId').click(function(){ /*сброс игры*/
    resetGameData();
    checks = [];
    totalTasksFinal, correctlyFinal, wrongFinal = 0;
+   document.getElementById('numberTasksId').value = 10;
+   document.getElementById('maximumValueId').value = 10;
+   document.getElementById('resultId').value = "";
    $('#gameSettings').css({display: 'flex'});
     return false;
 });
@@ -267,7 +296,7 @@ $('#safeGameResults').click(function(){
         document.getElementById('complexityId').value = checks.length * maximumNumber;
         document.getElementById('resultSafeId').value = Math.trunc(correctlyFinal * 100 / totalTasksFinal);
         document.getElementById('completenessId').value = 100;
-        totalTasksFinal, correctlyFinal, wrongFinal = 0;
+
 
         var dataGame = $('#gameResultsForSafe form').serialize();
 
@@ -288,31 +317,36 @@ $('#safeGameResults').click(function(){
 //                game[dataArray[i]['header']] = dataArray[i]['value'];
 //            }
             $('#gameResults').css({display: 'none'});
+
+            var gameCode = '<div class="game-list-one"> <div class="text_header">' + name +
+            '</div>';
+            gameCode += '<div class="text_header">' + formatDate(startTime) + '</div>';
+            gameCode += '<div class="text_header">' + timerFromString(timerTime) + '</div>';
+            gameCode += '<div class="text_header">' + checks.length * maximumNumber + '</div>';
+            gameCode += '<div class="text_header">' + Math.trunc(correctlyFinal * 100 / totalTasksFinal) + '</div>';
+            gameCode += '<div class="text_header">' + 100 + '</div></div>';
+            $('.game-list-data').append(gameCode);
             $('#game-list').css({display: 'flex'});
+
+
 //            $('#gameResultsForSafe').css({display: 'flex'});
 
         }
     });
+    totalTasksFinal, correctlyFinal, wrongFinal = 0;
  return false;
 });
 
-$('#newGame').click(function(){
+$('.newGame').click(function(){
     resetGameData();
     checks = [];
     totalTasksFinal, correctlyFinal, wrongFinal = 0;
-    $('#gameResults').css({display: 'none'});
+    $('#gameResults, #game-list').css({display: 'none'});
     $('#gameSettings').css({display: 'flex'});
     return false;
 });
 
-$('#home').click(function(){
-    resetGameData();
-    checks = [];
-    totalTasksFinal, correctlyFinal, wrongFinal = 0;
-    $('#gameResults').css({display: 'none'});
-    $('#choiceLogin').css({display: 'flex'});
-    return false;
-});
+
 
 function gameLaunch(){
     startTime = new Date();
@@ -335,10 +369,10 @@ function resetGameData(){
 
 function formatDate(date) {
    return date.getFullYear() + '/' +
-      (date.getMonth() + 1) + '/' +
-      date.getDate() + ' ' +
-      date.getHours() + ':' +
-      date.getMinutes();
+      updateTime((date.getMonth() + 1)) + '/' +
+      updateTime(date.getDate()) + ' ' +
+      updateTime(date.getHours()) + ':' +
+      updateTime(date.getMinutes());
    }
 
 function currentTime() {
@@ -372,10 +406,11 @@ function currentTime() {
       if (k < 10) {
         return "0" + k;
       }
-      else {
+      else  {
         return k;
       }
     }
+
 
 function creatingTask() {
 

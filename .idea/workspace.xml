@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ba83caf-92df-4037-af10-811e4493d18c" name="Changes" comment="running the main engine of the game_1.2">
+    <list default="true" id="0ba83caf-92df-4037-af10-811e4493d18c" name="Changes" comment="a table of game results has been formed_1.3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/DefaultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/DefaultController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/GameRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/DefaultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/DefaultController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Storage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Storage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
@@ -124,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669640286807</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="a table of game results has been formed_1.3">
+      <created>1669827044755</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669827044755</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,6 +140,7 @@
     <MESSAGE value="the database is connected and the start page is created_1.0" />
     <MESSAGE value="completed the first page of the game and the timer_1.1" />
     <MESSAGE value="running the main engine of the game_1.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="running the main engine of the game_1.2" />
+    <MESSAGE value="a table of game results has been formed_1.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="a table of game results has been formed_1.3" />
   </component>
 </project>
