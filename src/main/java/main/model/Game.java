@@ -4,10 +4,6 @@ package main.model;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.sql.Time;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Period;
 
 @Entity
 public class Game {
@@ -29,8 +25,6 @@ public class Game {
 
     @Column(name = "name_user")
     private String nameUser;
-
-
 
     @Column(name = "start_time")
     private String startTime;

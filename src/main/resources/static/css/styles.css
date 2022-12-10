@@ -8,8 +8,6 @@ body{
 	}
 
 .nameTheGame{
-    /*background-image:url(115879612.jpg);
-    background-size: 1130px 150px;*/
     background-color:#87CEEB;
 	font:30px arial sans-serif;
 	border-radius: 25px;
@@ -26,7 +24,6 @@ body{
 
 #pageContent{
     display: none;
-    /*display: flex;*/
     background-color:#F0FFF0;
     border-radius: 25px;
     position:absolute;
@@ -46,11 +43,7 @@ body{
 
 #game-list{
     display: none;
-    /*display: flex;*/
-    /*border-radius: 25px;*/
-    /*background-color:#98FB98;*/
     width:1000px;
-    /*height:1200px;*/
     position:absolute;
     left:150px;
     top:90px;
@@ -61,7 +54,6 @@ body{
 }
 
 #table_header{
-   /* background-color:#EEE8AA;*/
     width:980px;
     height:50px;
     float: left;
@@ -69,20 +61,16 @@ body{
 }
 
 .text_header{
-    /*background-color:#B0E0E6;*/
     border: 1px solid #696969;
     padding: 2px;
     font-size: 20px;
     text-align:center;
-    /*text-align: left;*/
-    /*width:80px;*/
     float: left;
     width: 150px;
     height: 45px;
 }
 
 .game-list-data{
-    /*background-color:#D8BFD8;*/
     overflow-y: auto;
     width:980px;
     height:650px;
@@ -94,7 +82,7 @@ body{
     clear: left;
 }
 
-/*закончилась ыорма итогов игр*/
+/*закончилась форма итогов игр*/
 
 #gameProgress{
 	background-color:#87CEEB;
@@ -226,11 +214,8 @@ div[class="partResults"]{
     top:390px;
 }
 
-
-
 #choiceLogin{
     display: flex;
-    /*display: none;*/
     height: 300px;
 }
 
@@ -245,20 +230,6 @@ div[class="partResults"]{
     width: 300px;
 }
 
-/*#areYouSureClearLogin{
-    background-color: #B0E0E6;
-    display: none;
-    border-radius: 25px;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top:90px;
-    left:300px;
-    width:700px;
-    height:760px;
-}*/
-
-
 #choiceLoginForm > button, #registrationForm > button, #inputForm > button, #gameSettingsForm > button,
 #gameResultsForm > button, #areYouSureForm > button, #areYouSureClearLoginForm > button, .game-list_float > button{
     align-items: center;
@@ -271,8 +242,6 @@ div[class="partResults"]{
     float:center;
     clear:left;
 }
-
-
 
 #registrationForm > label, #inputForm > label, #gameSettingsForm > label,
 #gameResultsForm > label{
@@ -292,7 +261,7 @@ div[class="partResults"]{
 }
 
 #gameSettingsForm > p > input{
-     width: 30px;
+    width: 30px;
     height: 30px;
     font-size: 20px;
 }
@@ -312,54 +281,6 @@ checkbox{
     height: 50px;
 }
 
-
-
 #gameResultsForSafe{
-display: none;
-}
-
-/*">.</button>
-      <button id="button-minus*/
-
-/*
-* {
-    font-family: Arial;
-}
-
-#user-form, #user-put-form {
     display: none;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    background-color: #88888878;
 }
-
-
-
-#user-form form, #user-put-form form {
-    background-color: white;
-    border: 1px solid #333;
-    width: 300px;
-    padding: 20px;
-}
-
-#user-form h2 {
-    margin-top: 0;
-}
-
-#user-form label{
-    display: block;
-}
-
-#user-form form > * {
-    margin-bottom: 5px;
-}
-
-h4 {
-    margin-bottom: 0;
-}*/

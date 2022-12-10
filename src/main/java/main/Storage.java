@@ -24,14 +24,7 @@ public class Storage {
     }
 
     public static int addUser(User user) {
-//        int id = 0;
-//        if(users.size() > 0){
-//            for(User user1 : users.values()){
-//                id = user1.getId();
-//            }
-//        }
-//        currentId = id;
-       int id = currentId++;
+        int id = currentId++;
         user.setId(id);
         users.put(id, user);
         return id;

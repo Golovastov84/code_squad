@@ -19,12 +19,8 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private GameRepository gameRepository;
-
-    public UserController(UserRepository userRepository, GameRepository gameRepository) {
+    public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.gameRepository = gameRepository;
     }
 
     @GetMapping("/users")
@@ -53,9 +49,7 @@ public class UserController {
         if(similarName){
             return -1;
         } else {
-//        User newUser = userRepository.save(putDeadline(user));
             User newUser = userRepository.save(user);
-
             return newUser.getId();
         }
     }
@@ -86,7 +80,6 @@ public class UserController {
         if (!optionalUser.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
-//        User modifiedUser = putDeadline(newUser);
         userRepository.save(newUser);
         return new ResponseEntity<>(newUser, HttpStatus.OK);
     }
@@ -99,65 +92,4 @@ public class UserController {
         userRepository.deleteAll();
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
-
-//    для game
-
-    @GetMapping("/games")
-    public List<Game> ListGame() {
-        Iterable<Game> gameIterable = gameRepository.findAll();
-
-        ArrayList<Game> games = new ArrayList<>();
-        for (Game game : gameIterable) {
-            games.add(game);
-        }
-        return games;
-    }
-
-    @PostMapping("/games")
-    public int addGame(Game game) {
-        if (gameRepository.count() == 0) {
-            game.setId(1);
-        }
-        Game newGame = gameRepository.save(game);
-        return newGame.getId();
-    }
-
-    @GetMapping("/games/{id}")
-    public ResponseEntity<?> getGame(@PathVariable int id) {
-        Optional<Game> optionalGame = gameRepository.findById(id);
-        if (!optionalGame.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-        return new ResponseEntity<>(optionalGame.get(), HttpStatus.OK);
-    }
-
-    @DeleteMapping("/games/{id}")
-    public ResponseEntity<?> dellGame(@PathVariable int id) {
-        Optional<Game> optionalGame = gameRepository.findById(id);
-        if (!optionalGame.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-        gameRepository.deleteById(id);
-        return new ResponseEntity<>(gameRepository.count(), HttpStatus.OK);
-    }
-
-    @PutMapping("/games/{id}")
-    public ResponseEntity<?> putGameId(Game newGame, @PathVariable int id) {
-        Optional<Game> optionalGame = gameRepository.findById(id);
-        if (!optionalGame.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-        gameRepository.save(newGame);
-        return new ResponseEntity<>(newGame, HttpStatus.OK);
-    }
-
-    @DeleteMapping("/games")
-    public ResponseEntity dellAllGames() {
-        if (gameRepository.count() == 0) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The list is already empty.");
-        }
-        gameRepository.deleteAll();
-        return new ResponseEntity<>(null, HttpStatus.OK);
-    }
-
 }

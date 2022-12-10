@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="GameVerbalCount:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ba83caf-92df-4037-af10-811e4493d18c" name="Changes" comment="a table of game results has been formed_1.3">
+    <list default="true" id="0ba83caf-92df-4037-af10-811e4493d18c" name="Changes" comment="add tests and jar file_1.5">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/GameVerbalCount_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/GameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/main/MysqlApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameVerbalCount.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GameVerbalCount.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/DefaultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/DefaultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/DefaultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/DefaultController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Storage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Storage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/main.js" afterDir="false" />
@@ -22,6 +42,15 @@
   <component name="ChangesViewManager">
     <option name="groupingKeys">
       <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
     </option>
   </component>
   <component name="Git.Settings">
@@ -45,29 +74,61 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/VSGol/IdeaProjects/GameVerbalCount/target/classes/static/css",
-    "project.structure.last.edited": "Modules",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/VSGol/IdeaProjects/GameVerbalCount",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.38045976",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.springboot.mysql" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\VSGol\IdeaProjects\GameVerbalCount\target\classes\static\css" />
-      <recent name="C:\Users\VSGol\IdeaProjects\GameVerbalCount\src\main\resources\static\css" />
+      <recent name="C:\Users\VSGol\IdeaProjects\GameVerbalCount\src\main\resources" />
       <recent name="C:\Users\VSGol\IdeaProjects\GameVerbalCount" />
-      <recent name="C:\Users\VSGol\IdeaProjects\GameVerbalCount\src" />
+      <recent name="C:\Users\VSGol\IdeaProjects\GameVerbalCount\src\main\java" />
+      <recent name="C:\Users\VSGol\IdeaProjects\GameVerbalCount\src\main\resources\META-INF" />
+      <recent name="C:\Users\VSGol\IdeaProjects\GameVerbalCount\target\classes\static\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\VSGol\IdeaProjects\GameVerbalCount" />
+      <recent name="C:\Users\VSGol\IdeaProjects\GameVerbalCount\src\main\java\META-INF" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="main" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="main" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="main" />
+      <recent name="com.springboot.mysql" />
       <recent name="main.model" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="GameVerbalCount" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MysqlApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GameVerbalCount" />
       <extension name="coverage">
         <pattern>
@@ -75,13 +136,20 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.MysqlApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.MysqlApplicationTests" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MysqlApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -122,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669827044755</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="finished game_1.4">
+      <created>1670246571868</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670246571868</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +216,7 @@
     <MESSAGE value="completed the first page of the game and the timer_1.1" />
     <MESSAGE value="running the main engine of the game_1.2" />
     <MESSAGE value="a table of game results has been formed_1.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="a table of game results has been formed_1.3" />
+    <MESSAGE value="finished game_1.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished game_1.4" />
   </component>
 </project>
