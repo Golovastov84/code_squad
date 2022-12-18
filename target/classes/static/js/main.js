@@ -115,7 +115,13 @@ $(function(){
 
     $('input[type="checkbox"]').change(function(){
         if(this.checked == true){
+            if(this.value === " * " || this.value === " / "){
             checks.push(this.value);
+            checks.push(this.value);
+            }
+            else{
+            checks.push(this.value);
+            }
         }
         return false;
     });
