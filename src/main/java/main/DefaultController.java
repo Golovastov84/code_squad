@@ -1,7 +1,7 @@
 package main;
 
-import main.model.Game;
-import main.model.GameRepository;
+import main.model.Comment;
+import main.model.CommentRepository;
 import main.model.User;
 import main.model.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class DefaultController {
     UserRepository userRepository;
 
     @Autowired
-    GameRepository gameRepository;
+    CommentRepository commentRepository;
 
     @RequestMapping("/")
     public String index(Model model){
@@ -27,14 +27,14 @@ public class DefaultController {
         for(User user : userIterable){
             users.add(user);
         }
-        Iterable<Game> gameIterable = gameRepository.findAll();
-        ArrayList<Game> games = new ArrayList<>();
-        for(Game game : gameIterable){
-            games.add(game);
+        Iterable<Comment> commentIterable = commentRepository.findAll();
+        ArrayList<Comment> comments = new ArrayList<>();
+        for(Comment comment : commentIterable){
+            comments.add(comment);
         }
 
         model.addAttribute("users", users);
-        model.addAttribute("games", games);
+        model.addAttribute("comments", comments);
         return "index";
     }
 }

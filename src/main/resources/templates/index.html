@@ -2,20 +2,20 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Mental count game</title>
+    <title>Sorting Comments</title>
     <script src="/js/jquery-3.4.0.min.js"></script>
     <script src="/js/main.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
     <div class="nameTheGame">
-        <h3>Игра „Устный счет“</h3>
+        <h3>Сортировка комментариев</h3>
     </div>
     <div id="choiceLogin">
         <form id="choiceLoginForm">
             <button id="enterId">Вход</button>
             <button id="registrationId">Регистрация</button>
-            <button id="gameWithoutRegistrationId">Играть без регистрации</button>
+            <!--<button id="gameWithoutRegistrationId">Играть без регистрации</button>-->
         </form>
     </div>
 
@@ -23,9 +23,9 @@
     <div id="registrationWindow">
         <form id="registrationForm">
             <h3>Регистрация</h3>
-            <label>Имя игрока</label>
+            <label>Имя участника</label>
             <input type="text" name="name" id="registrationNameId" value="">
-            <label>Пароль игрока</label>
+            <label>Пароль участника</label>
             <input type="text" name="password" id="registrationPasswordId" value="">
             <label>Повторите ввод пароля</label>
             <input type="text" name="passwordVerification" id="registrationVerificationId" value="">
@@ -38,9 +38,9 @@
     <div id="inputWindow">
         <form id="inputForm">
             <h3>Авторизуйтесь</h3>
-            <label>Имя игрока</label>
+            <label>Имя участника</label>
             <input type="text" name="name" id="nameId" value="">
-            <label>Пароль игрока</label>
+            <label>Пароль участника</label>
             <input type="text" name="password" id="passwordId" value="">
             <hr>
             <button id="searchUser">Далее</button>
@@ -48,7 +48,7 @@
         </form>
     </div>
 
-    <div id="gameSettings">
+    <!--<div id="gameSettings">
         <form id="gameSettingsForm">
             <p>Выбирете арифметические действия.</p>
             <p><input type="checkbox" name="check1" value=" * "> * </p>
@@ -62,38 +62,38 @@
             <button id="startGame">Играть</button>
             <button class="goHome">На стартовую</button>
         </form>
-    </div>
+    </div>-->
 
     <!--окно игры-->
     <div id="pageContent">
-        <div id="gameProgress">
-            <div class="partProgress">
-                <label>Всего задач</label>
-                <input type="text" name="progress"  id="totalTasksId" value="" readonly> <!--<h3>Всего задач хх</h3>-->
-            </div>
-            <div class="partProgress">
-                <label>Правильно</label>
-                <input type="text" name="progress"  id="correctlyId" value="" readonly> <!--<h3>Правильно хх</h3>-->
-            </div>
-            <div class="partProgress">
-                <label>Не правильно</label>
-                <input type="text" name="progress"  id="wrongId" value="" readonly> <!--<h3>Не правильно хх</h3>-->
-            </div>
-            <div class="partProgress">
-                <label>Осталось</label>
-                <input type="text" name="progress"  id="leftId" value="" readonly> <!--<h3>Всего осталось хх</h3>-->
-            </div>
-        </div>
-        <div id="timer">
+<!--        <div id="gameProgress">-->
+<!--            <div class="partProgress">-->
+<!--                <label>Всего задач</label>-->
+<!--                <input type="text" name="progress"  id="totalTasksId" value="" readonly> &lt;!&ndash;<h3>Всего задач хх</h3>&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="partProgress">-->
+<!--                <label>Правильно</label>-->
+<!--                <input type="text" name="progress"  id="correctlyId" value="" readonly> &lt;!&ndash;<h3>Правильно хх</h3>&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="partProgress">-->
+<!--                <label>Не правильно</label>-->
+<!--                <input type="text" name="progress"  id="wrongId" value="" readonly> &lt;!&ndash;<h3>Не правильно хх</h3>&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="partProgress">-->
+<!--                <label>Осталось</label>-->
+<!--                <input type="text" name="progress"  id="leftId" value="" readonly> &lt;!&ndash;<h3>Всего осталось хх</h3>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+        <!--<div id="timer">
             <p>Время с начала игры</p>
             <input type="text" name="inputTimer"  id="inputTimerId" value="" readonly>
         </div>
         <div id="gameAdjustments">
             <button id="resetGame">Играть заново</button>
             <button id="clearId">Очистить</button>
-        </div>
+        </div>-->
         <input type="text" name="taskText" id="taskTextId" value="">
-        <div id="dialingButtons">
+        <!--<div id="dialingButtons">
             <p>Составте ответ</p>
             <button id="button7" value="7">7</button>
             <button id="button8" value="8">8</button>
@@ -107,25 +107,25 @@
             <button id="button0" value="0">0</button>
             <button id="buttonDot" value=".">.</button>
             <button id="buttonMinus" value="-">-</button>
-        </div>
+        </div>-->
         <input type="text" name="result"  id="resultId" value="">
         <button id="sendId">Отправить</button>
     </div>
 
-    <div id="gameResults">
+    <!--<div id="gameResults">
         <form id="gameResultsForm">
             <p>Результаты игры.</p>
             <div class="partResults">
                 <label>Всего задач</label>
-                <input type="text" name="progress"  id="totalTasksFinalId" value="" readonly> <!--<h3>Всего задач хх</h3>-->
+                <input type="text" name="progress"  id="totalTasksFinalId" value="" readonly> &lt;!&ndash;<h3>Всего задач хх</h3>&ndash;&gt;
             </div>
             <div class="partResults">
                 <label>Правильно</label>
-                <input type="text" name="progress"  id="correctlyFinalId" value="" readonly> <!--<h3>Правильно хх</h3>-->
+                <input type="text" name="progress"  id="correctlyFinalId" value="" readonly> &lt;!&ndash;<h3>Правильно хх</h3>&ndash;&gt;
             </div>
             <div class="partResults">
                 <label>Не правильно</label>
-                <input type="text" name="progress"  id="wrongFinalId" value="" readonly> <!--<h3>Не правильно хх</h3>-->
+                <input type="text" name="progress"  id="wrongFinalId" value="" readonly> &lt;!&ndash;<h3>Не правильно хх</h3>&ndash;&gt;
             </div>
             <button id="safeGameResults">Сохранить результаты</button>
             <button class="newGame">Играть ещё</button>
@@ -139,7 +139,7 @@
             <button id="yesResetId">Да</button>
             <button id="noResetId">Нет</button>
         </form>
-    </div>
+    </div>-->
 
     <div id="areYouSureClearLogin">
         <form id="areYouSureClearLoginForm">
@@ -155,61 +155,83 @@
             <p>Результаты игры.</p>
             <input type="text" name="idUser"  id="idUserId" value="" readonly>
             <input type="text" name="nameUser"  id="nameUserId" value="" readonly>
-            <input type="text" name="startTime"  id="startTimeId" value="" readonly>
-            <input type="text" name="timer"  id="timerId" value="" readonly>
-            <input type="text" name="complexity"  id="complexityId" value="" readonly>
-            <input type="text" name="result"  id="resultSafeId" value="" readonly>
-            <input type="text" name="completeness"  id="completenessId" value="" readonly>
+            <input type="text" name="textChat"  id="chatTextId" value="" readonly>
+            <input type="text" name="commentTime"  id="commentTimeId" value="" readonly>
+            <input type="text" name="comment"  id="commentId" value="" readonly>
+            <input type="text" name="rating"  id="ratingId" value="" readonly>
+            <!--<input type="text" name="result"  id="resultSafeId" value="" readonly>
+            <input type="text" name="completeness"  id="completenessId" value="" readonly>-->
         </form>
     </div>
+
+
 
     <div id="game-list">
         <div class="game-list_float">
             <div id="table_header">
                 <div class="text_header">
-                    Имя игрока
+                    Имя участника
                 </div>
                 <div class="text_header">
-                    Дата игры
+                    Текст
                 </div>
                 <div class="text_header">
+                    Время составления комметария
+                </div>
+                <div class="text_header">
+                    Комметарий
+                </div>
+                <!--<div class="text_header">
                     Таймер игры
-                </div>
-                <div class="text_header">
+                </div>-->
+                <!--<div class="text_header">
                     сложность игры
                 </div>
                 <div class="text_header">
                     результат
-                </div>
+                </div>-->
                 <div class="text_header">
-                    % завершения
+                    Рэйтинг
                 </div>
             </div>
 
+            <!--<div id="people-list-documents">
+        <form>
+            <label id="people-FIO"></label>
+            <div id="type-document-list-people"><br>
+                <div th:each="document : ${documents}">
+                    <a href="#" class="type-document-link"
+                       th:attr="data-id=${document.id}"></a>
+                </div>
+            </div>
+            <button class="document-link-for-list">Просмотр списка людей</button>
+        </form>
+    </div>-->
+
             <div class="game-list-data">
-                <div class="game-list-one"  th:each="game : ${games}">
+                <div class="game-list-one"  th:each="comment : ${comments}">
                     <div class="text_header"
-                        th:text=${game.nameUser}>
+                        th:text=${comment.nameUser}>
                     </div>
                     <div class="text_header"
-                        th:text=${game.startTime}>
+                        th:text=${comment.text}>
                     </div>
                     <div class="text_header"
-                        th:text=${game.timer}>
+                        th:text=${comment.commentTime}>
                     </div>
                     <div class="text_header"
-                        th:text=${game.complexity}>
+                        th:text=${comment.comment}>
                     </div>
                     <div class="text_header"
-                        th:text=${game.result}>
+                        th:text=${comment.rating}>
                     </div>
-                    <div class="text_header"
+                    &lt;!&ndash;<div class="text_header"
                         th:text=${game.completeness}>
-                    </div>
+                    </div>&ndash;&gt;
                 </div>
             </div>
             <button class="goHome">На стартовую</button>
-            <button class="newGame">Играть ещё</button>
+            <button class="newGame">Добавить комментарий</button>
         </div>
     </div>
 

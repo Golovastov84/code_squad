@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GameVerbalCount.iml" filepath="$PROJECT_DIR$/GameVerbalCount.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SortingComments.iml" filepath="$PROJECT_DIR$/SortingComments.iml" />
     </modules>
   </component>
 </project>

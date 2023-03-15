@@ -1,7 +1,5 @@
 package main;
 
-import main.model.Game;
-import main.model.GameRepository;
 import main.model.User;
 import main.model.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
