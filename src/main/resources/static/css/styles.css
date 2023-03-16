@@ -117,7 +117,7 @@ body{
     height:70px;
 }
 
-#yesClearLogin{
+#yesClearLogin, #yesAddComment{
     background-color:#FFA07A;
 }
 
@@ -152,7 +152,7 @@ body{
     height: 300px;
 }
 
-#choiceLogin, #registrationWindow, #inputWindow, #areYouSureClearLogin{
+#choiceLogin, #registrationWindow, #inputWindow, #areYouSureClearLogin, #areYouSureAddComment{
     background-color: #B0E0E6;
     border-radius: 25px;
     align-items: center;
@@ -164,7 +164,7 @@ body{
 }
 
 #choiceLoginForm > button, #registrationForm > button, #inputForm > button, #areYouSureClearLoginForm > button, .game-list_float >
-button{
+button, #areYouSureAddCommentForm > button{
     align-items: center;
     border-radius: 5px;
     font-size: 20px;
@@ -192,12 +192,12 @@ button{
 }
 
 
-#registrationWindow, #inputWindow, #areYouSureClearLogin{
+#registrationWindow, #inputWindow, #areYouSureClearLogin, #areYouSureAddComment{
     display: none;
     height: 620px;
 }
 
 
-#gameResultsForSafe, .goHome{
+#gameResultsForSafe{
     display: none;
 }

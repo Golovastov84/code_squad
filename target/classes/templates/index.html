@@ -56,6 +56,14 @@
         <button id="sendId">Отправить</button>
     </div>
 
+    <div id="areYouSureAddComment">
+        <form id="areYouSureAddCommentForm">
+            <p>Сейчас выдется таблица отсортированных комментариев</p>
+            <button id="yesAddComment">Ок</button>
+            <!--<button id="noAddComment">Нет</button>-->
+        </form>
+    </div>
+
 
     <div id="areYouSureClearLogin">
         <form id="areYouSureClearLoginForm">
@@ -107,26 +115,26 @@
             <!--th:each="user : ${users}"-->
 
             <div id="game-list-data">
-                <div class="game-list-one"  th:each="comment : ${comments}" >
+                <div class="game-list-one"  th:each="commentWN : ${commentsWNames}" >
                     <div class="text_body"
-                         th:text=${comment.id}>
+                         th:text=${commentWN.idC}>
                     </div>
                     <!--th:text=${user.name}>-->
                     <div class="text_body"
 
-                        th:text=${comment.idName}>
+                        th:text=${commentWN.nameP}>
                     </div>
                     <div class="text_body"
-                        th:text=${comment.topicText}>
+                        th:text=${commentWN.topicTextC}>
                     </div>
                     <div class="text_body"
-                        th:text=${comment.commentTime}>
+                        th:text=${commentWN.commentTimeC}>
                     </div>
                     <div class="text_body"
-                        th:text=${comment.commentText}>
+                        th:text=${commentWN.commentTextC}>
                     </div>
                     <div class="text_body"
-                        th:text=${comment.rating}>
+                        th:text=${commentWN.ratingC}>
                     </div>
                 </div>
             </div>

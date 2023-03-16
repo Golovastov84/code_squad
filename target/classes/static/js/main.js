@@ -105,12 +105,12 @@ $(function(){
     });
 
     $('#yesClearLogin').click(function(){
-        resetGameData();
-        checks = [];
-        totalTasksFinal, correctlyFinal, wrongFinal = 0;
-        name, password, passwordVerification = "";
+        name, password = "";
+        idName = -1;
         localStorage.clear();
-        location.reload();
+        $('#areYouSureClearLogin').css({display: 'none'});
+        $('#choiceLogin').css({display: 'flex'});
+        return false;
     });
 
     $('#noClearLogin').click(function(){
@@ -122,7 +122,7 @@ $(function(){
     $('#sendId').click(function(){
         playerScore = document.getElementById('resultId').value;
         if(playerScore == ""){
-            alert('Введите результат рассчета.');
+            alert('Введите комментарий.');
         } else {
             ratingComment = getRandomArbitrary(0, 5);
             if(ratingComment < 1){
@@ -146,43 +146,23 @@ $(function(){
             success: function(response){
             }
         });
-        // To Do
-        /*document.getElementById("game-list-data").value = '<div class="game-list-one"  th:each="comment :
-        ${comments}"><div class="text_header" th:text=${comment.id}></div><div class="text_header" th:text=${comment
-        .name}></div> <div class="text_header" th:text=${comment.text}> </div> <div class="text_header"
-        th:text=${comment.commentTime}> </div> <div class="text_header" th:text=${comment.comment}> </div> <div
-        class="text_header" th:text=${comment.rating}></div></div>';*/
-        /*$.ajax({
-            method: "GET",
-            url: '/comments/',
-            success: function(response)
-            {
-                for (var comment of response)
-             {
-                *//*var code = '<div class="text_header">' + comment.id + '</div><div class="text_header">' + comment.name +
-                 '</div><div class="text_header">' + comment.text + '</div><div class="text_header">' + comment
-                 .commentTime + '</div><div class="text_header">' +
-                 comment.comment + '</div><div class="text_header">' + comment.rating + '</div>';
-                $('#game-list-data').append('<div>' + code + '</div>');*//*}
-            }
-        });*/
         localStorage.setItem("myName",name);
         localStorage.setItem("myPassword",password);
         localStorage.setItem("myIdName",idName);
-         $('.goHome').css({display: 'flex'});
-          /*$('#game-list').css({display: 'flex'});*/
-           location.reload();
+         $('#game-list').css({display: 'none'});
+          $('#areYouSureAddComment').css({display: 'flex'});
           }
-
          }
-        totalTasksFinal, correctlyFinal, wrongFinal = 0;
-
         return false;
     });
 
+    $('#yesAddComment').click(function(){
+            location.reload();
+        });
+
+
     $('.newGame').click(function(){
     if(localStorage.length == 0){
-    /*if(name == "" && password == ""){*/
         $('#game-list').css({display: 'none'});
         $('#choiceLogin').css({display: 'flex'});
     } else {

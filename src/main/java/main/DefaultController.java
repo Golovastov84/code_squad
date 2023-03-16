@@ -1,9 +1,6 @@
 package main;
 
-import main.model.Comment;
-import main.model.CommentRepository;
-import main.model.User;
-import main.model.UserRepository;
+import main.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,8 +36,30 @@ public class DefaultController {
                 Comparator.comparing(Comment::getRating, Comparator.reverseOrder()).thenComparing(Comment::getId,
                         Comparator.reverseOrder()));
 
+        ArrayList<CommentWithName> commentsWNames = new ArrayList<>();
+        for(Comment comment : commentIterable){
+            CommentWithName commentWithName = new CommentWithName();
+            commentWithName.setIdC(comment.getId());
+            for(User user : users){
+               if(comment.getIdName() == user.getId()){
+                   commentWithName.setNameP(user.getName());
+               }
+            }
+
+            commentWithName.setTopicTextC(comment.getTopicText());
+            commentWithName.setCommentTimeC(comment.getCommentTime());
+            commentWithName.setCommentTextC(comment.getCommentText());
+            commentWithName.setRatingC(comment.getRating());
+            commentsWNames.add(commentWithName);
+        }
+
+        Collections.sort(commentsWNames,
+                Comparator.comparing(CommentWithName::getRatingC, Comparator.reverseOrder()).thenComparing(CommentWithName::getIdC,
+                        Comparator.reverseOrder()));
+
         model.addAttribute("users", users);
         model.addAttribute("comments", comments);
+        model.addAttribute("commentsWNames", commentsWNames);
         return "index";
     }
 }
