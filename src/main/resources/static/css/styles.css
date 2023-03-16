@@ -42,10 +42,10 @@ body{
 /*начало формы итогов игры*/
 
 #game-list{
-    display: none;
-    width:1000px;
+    display: flex;
+    width:1300px;
     position:absolute;
-    left:150px;
+    left:20px;
     top:90px;
 }
 
@@ -54,83 +54,55 @@ body{
 }
 
 #table_header{
-    width:980px;
-    height:50px;
+    width:1300px;
+    height:60px;
     float: left;
     clear:left;
 }
 
 .text_header{
     border: 1px solid #696969;
-    padding: 2px;
+    /*padding: 2px;*/
     font-size: 20px;
     text-align:center;
     float: left;
-    width: 150px;
-    height: 45px;
+    width: 200px;
+    height: 60px;
 }
 
-.game-list-data{
+#game-list-data{
     overflow-y: auto;
-    width:980px;
+    width:1300px;
     height:650px;
     clear: left;
     float: left;
 }
 
 .game-list-one{
+    border: 1px solid #696969;
+    /*padding: 2px;*/
+    width:1212px;
     clear: left;
+    float: left;
+
 }
 
-/*закончилась форма итогов игр*/
+.text_body{
+   /*border: 1px solid #FFFFFF;*/
+       /*padding: 2px;*/
+       font-size: 20px;
+       text-align:center;
+       float: left;
+       width: 200px;
+       /*height: 58px;*/
+}
 
-/*#gameProgress{
-	background-color:#87CEEB;
-	border-radius: 25px;
-	text-align: left;
-    font-size: 25px;
-	margin:10px;
-	width:410px;
-	height:250px;
-	float:left;
-	clear:right;
-}*/
+.newGame{
+   /* display: flex;
+    flex-direction: row;*/
+    float:left;
+}
 
-/*input[name="progress"]{
-    background-color:#87CEEB;
-    text-align: center;
-    font-size: 25px;
-    width:50px;
-    height:35px;
-    margin:7px;
-}*/
-
-/*div[class="partProgress"]{
-    width:350px;
-    margin:7px;
-    text-align: right;
-}*/
-
-/*div[class="partResults"]{
-    width:260px;
-    text-align: right;
-}*/
-
-/*#timer{
-	background-color:#87CEEB;
-	border-radius: 25px;
-	margin:10px;
-	float:right;
-	width:400px;
-	height:200px;
-	clear:right;
-}*/
-
-/*#inputTimerId{
-    height:50px;
-    text-align: center;
-    font-size: 25px;
-}*/
 
 #taskTextId{
     background-color:#87CEEB;
@@ -145,53 +117,14 @@ body{
     height:70px;
 }
 
-/*#gameAdjustments{
-    margin:10px;
-    text-align: left;
-    float:left;
-    clear:right;
-}*/
-
-/*#resetGame, #clearId{
-    background-color:#FFA07A;
-    border-radius: 25px;
-    margin:10px;
-    font-size: 30px;
-    text-align: center;
-    width:170px;
-    height:80px;
-}*/
-
-/*#resetGame, #yesResetId, */#yesClearLogin{
+#yesClearLogin{
     background-color:#FFA07A;
 }
 
-/*#noResetId, */#noClearLogin{
+#noClearLogin{
     background-color:#98FB98;
 }
 
-/*#clearId{
-    background-color:#F0E68C;
-}*/
-
-/*#dialingButtons{
-    background-color:#87CEEB;
-    border-radius: 25px;
-    position:absolute;
-    top:390px;
-    left:80px;
-	margin:10px;
-	width:220px;
-	height:380px;
-}*/
-
-/*#dialingButtons > button{
-    margin:10px;
-    width:50px;
-    height:50px;
-    float:left;
-    font-size: 20px;
-}*/
 
 #resultId, #sendId{
     background-color:#F5F5F5;
@@ -215,11 +148,11 @@ body{
 }
 
 #choiceLogin{
-    display: flex;
+    display: none;
     height: 300px;
 }
 
-#choiceLogin, #registrationWindow, #inputWindow, /*#gameSettings, #gameResults, #areYouSure, */#areYouSureClearLogin{
+#choiceLogin, #registrationWindow, #inputWindow, #areYouSureClearLogin{
     background-color: #B0E0E6;
     border-radius: 25px;
     align-items: center;
@@ -230,8 +163,7 @@ body{
     width: 300px;
 }
 
-#choiceLoginForm > button, #registrationForm > button, #inputForm > button, /*#gameSettingsForm > button,*/
-/*#gameResultsForm > button, #areYouSureForm > button, */#areYouSureClearLoginForm > button, .game-list_float >
+#choiceLoginForm > button, #registrationForm > button, #inputForm > button, #areYouSureClearLoginForm > button, .game-list_float >
 button{
     align-items: center;
     border-radius: 5px;
@@ -244,15 +176,13 @@ button{
     clear:left;
 }
 
-#registrationForm > label, #inputForm > label/*, #gameSettingsForm > label,
-#gameResultsForm > label*/{
+#registrationForm > label, #inputForm > label{
     float:center;
     clear:left;
     margin: 10px;
 }
 
-#registrationForm > input, #inputForm > input/*, #gameSettingsForm > input,
- #gameResultsForm > input*/{
+#registrationForm > input, #inputForm > input{
     float:center;
     clear:both;
     margin: 10px;
@@ -261,27 +191,13 @@ button{
     font-size: 20px;
 }
 
-/*#gameSettingsForm > p > input{
-    width: 30px;
-    height: 30px;
-    font-size: 20px;
-}*/
 
-#registrationWindow, #inputWindow, /*#gameResults, #areYouSure, */#areYouSureClearLogin{
+#registrationWindow, #inputWindow, #areYouSureClearLogin{
     display: none;
     height: 620px;
 }
 
-/*#gameSettings{
-    display: none;
-    height: 750px;
-}*/
 
-/*checkbox{
-    width: 50px;
-    height: 50px;
-}*/
-
-#gameResultsForSafe{
+#gameResultsForSafe, .goHome{
     display: none;
 }

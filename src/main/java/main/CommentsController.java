@@ -19,19 +19,19 @@ public class CommentsController {
     public CommentsController(CommentRepository commentRepository) {
         this.commentRepository = commentRepository;
     }
-    @GetMapping("/comments")
+    @GetMapping("/comments/")
     public List<Comment> ListComments() {
-        Iterable<Comment> gameIterable = commentRepository.findAll();
+        Iterable<Comment> commentIterable = commentRepository.findAll();
         ArrayList<Comment> comments = new ArrayList<>();
         
-        for (Comment comment : gameIterable) {
+        for (Comment comment : commentIterable) {
             comments.add(comment);
         }
-        Collections.sort(comments, Comparator.comparing(Comment::getRating).thenComparing(Comment::getId));
+        Collections.sort(comments, Comparator.comparing(Comment::getRating).reversed().thenComparing(Comment::getId).reversed());
         return comments;
     }
 
-    @PostMapping("/comments")
+    @PostMapping("/comments/")
     public int addGame(Comment comment) {
         if (commentRepository.count() == 0) {
             comment.setId(1);
@@ -69,7 +69,7 @@ public class CommentsController {
         return new ResponseEntity<>(newComment, HttpStatus.OK);
     }
 
-    @DeleteMapping("/comments")
+    @DeleteMapping("/comments/")
     public ResponseEntity dellAllComments() {
         if (commentRepository.count() == 0) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The list is already empty.");

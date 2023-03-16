@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 @Controller
 public class DefaultController {
@@ -32,6 +34,10 @@ public class DefaultController {
         for(Comment comment : commentIterable){
             comments.add(comment);
         }
+
+        Collections.sort(comments,
+                Comparator.comparing(Comment::getRating, Comparator.reverseOrder()).thenComparing(Comment::getId,
+                        Comparator.reverseOrder()));
 
         model.addAttribute("users", users);
         model.addAttribute("comments", comments);

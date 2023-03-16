@@ -21,16 +21,17 @@ public class Comment {
     private int id;
 
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "id_name")
+    private int idName;
 
-    @Column(name = "text")
-    private String text;
+    @Column(name = "topic_text")
+    private String topicText;
 
     @Column(name = "comment_time")
     private String commentTime;
 
-    private String comment;
+    @Column(name = "comment_text")
+    private String commentText;
 
     private int rating;
 
@@ -47,20 +48,20 @@ public class Comment {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public int getIdName() {
+        return idName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setIdName(int idName) {
+        this.idName = idName;
     }
 
-    public String getText() {
-        return text;
+    public String getTopicText() {
+        return topicText;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setTopicText(String topicText) {
+        this.topicText = topicText;
     }
 
     public String getCommentTime() {
@@ -71,12 +72,12 @@ public class Comment {
         this.commentTime = commentTime;
     }
 
-    public String getComment() {
-        return comment;
+    public String getCommentText() {
+        return commentText;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setCommentText(String commentText) {
+        this.commentText = commentText;
     }
 
     public int getRating() {
@@ -86,11 +87,6 @@ public class Comment {
     public void setRating(int rating) {
         this.rating = rating;
     }
-
-    /*public Comment(int id, int rating) {
-        this.id = id;
-        this.rating = rating;
-    }*/
 
     @Override
     public int hashCode(){

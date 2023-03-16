@@ -53,10 +53,6 @@ $(function(){
                         document.getElementById('registrationVerificationId').value = passwordVerification;
                     } else  {
                         $('#registrationWindow').css({display: 'none'});
-                        /*gameLaunch();*/
-                       /* currentTime();*/ /* Вызываем функция currentTime(), которая запускает весь процесс*/
-                       /* creatingTask();*/
-                       /* calculationTask();*/
                         $('#pageContent').css({display: 'flex'});
                     }
                 }
@@ -86,10 +82,6 @@ $(function(){
                     document.getElementById('nameId').value = name;
                 } else {
                    $('#inputWindow').css({display: 'none'});
-                  /* gameLaunch();*/
-                  /* currentTime();*/ /* Вызываем функция currentTime(), которая запускает весь процесс*/
-                   /*creatingTask();*/
-                  /* calculationTask();*/
                    $('#pageContent').css({display: 'flex'});
 
                 }
@@ -117,6 +109,7 @@ $(function(){
         checks = [];
         totalTasksFinal, correctlyFinal, wrongFinal = 0;
         name, password, passwordVerification = "";
+        localStorage.clear();
         location.reload();
     });
 
@@ -125,78 +118,6 @@ $(function(){
         $('#areYouSureClearLogin').css({display: 'none'});
         return false;
     });
-
-    /*$('input[type="checkbox"]').change(function(){
-        if(this.checked == true){
-            if(this.value === " * " || this.value === " / "){
-            checks.push(this.value);
-            checks.push(this.value);
-            }
-            else{
-            checks.push(this.value);
-            }
-        }
-        return false;
-    });*/
-
-    /*$('#gameWithoutRegistrationId').click(function(){
-        $('#choiceLogin').css({display: 'none'});
-        $('#gameSettings').css({display: 'flex'});
-        return false;
-    });*/
-
-    /*$('#startGame').click(function(){
-        maximumNumber = document.getElementById('maximumValueId').value;
-        if(checks.length == 0){
-            alert('Выберете не менее 1 арифметического действия!');
-        } else if(maximumNumber < 1){
-            alert('Укажите максимальное число в задачах не менее 1!');
-        } else {
-            $('#gameSettings').css({display: 'none'});
-            $('#pageContent').css({display: 'flex'});
-            gameLaunch();
-            currentTime(); *//* Вызываем функция currentTime(), которая запускает весь процесс*//*
-            creatingTask();
-            calculationTask();
-        }
-        return false;
-    });
-
-    $('#resetGame').click(function(){
-        $('#pageContent').css({display: 'none'});
-        $('#areYouSure').css({display: 'flex'});
-        return false;
-    });
-
-    $('#yesResetId').click(function(){ *//*сброс игры*//*
-        $('#areYouSure').css({display: 'none'});
-        resetGameData();
-        checks = [];
-        totalTasksFinal, correctlyFinal, wrongFinal = 0;
-        document.getElementById('numberTasksId').value = 10;
-        document.getElementById('maximumValueId').value = 10;
-        document.getElementById('resultId').value = "";
-        $('#gameSettings').css({display: 'flex'});
-        return false;
-    });
-
-    $('#noResetId').click(function(){ *//*продолжение игры*//*
-        $('#pageContent').css({display: 'flex'});
-        $('#areYouSure').css({display: 'none'});
-        return false;
-    });*/
-
-    /*$('#dialingButtons button').click(function(){
-        playerScore += this.value;
-        document.getElementById('resultId').value = playerScore;
-        return false;
-    });*/
-
-    /*$('#clearId').click(function(){
-        playerScore = "";
-        document.getElementById('resultId').value = playerScore;
-        return false;
-    });*/
 
     $('#sendId').click(function(){
         playerScore = document.getElementById('resultId').value;
@@ -208,168 +129,73 @@ $(function(){
             alert('Комментарий нуждается в улучшении, его рейтинг меньше 1');
             } else {
 
-
-           /* if (playerScore == resultCorrect){
-                ++document.getElementById('correctlyId').value;
-                correctlyFinal = document.getElementById('correctlyId').value;
-            } else{
-                ++document.getElementById('wrongId').value;
-                wrongFinal = document.getElementById('wrongId').value;
-            }
-            --document.getElementById('leftId').value;
-            playerScore = "";
-            creatingTask();*/
-            /*calculationTask();*/
             commentText = document.getElementById('resultId').value;
             document.getElementById('resultId').value = "";
             $('#pageContent').css({display: 'none'});
-            }
-        }
-        /*document.getElementById('idUserId').value = idName;*/
-        document.getElementById('nameUserId').value = name;
+
+        document.getElementById('idUserId').value = idName;
         document.getElementById('chatTextId').value = chatText;
         document.getElementById('commentTimeId').value = formatDate(new Date());
         document.getElementById('commentId').value = commentText;
         document.getElementById('ratingId').value = ratingComment;
-        /*document.getElementById('resultSafeId').value = Math.trunc(correctlyFinal * 100 / totalTasksFinal);
-        document.getElementById('completenessId').value = 100;*/
         var dataComment = $('#gameResultsForSafe form').serialize();
         $.ajax({
             method: "POST",
-            url: '/games/',
+            url: '/comments/',
             data: dataComment,
             success: function(response){
-                /*var chat = 0;
-                chat.id = response;
-                *//*$('#gameResults').css({display: 'none'});*//*
-                var gameCode = '<div class="game-list-one"> <div class="text_header">' + name +
-                '</div>';
-                gameCode += '<div class="text_header">' + chatText + '</div>';
-                gameCode += '<div class="text_header">' + document.getElementById('commentTimeId').value + '</div>';
-                gameCode += '<div class="text_header">' + timerFromString(timerTime) + '</div>';
-                gameCode += '<div class="text_header">' + checks.length * maximumNumber + '</div>';
-                gameCode += '<div class="text_header">' + Math.trunc(correctlyFinal * 100 / totalTasksFinal) + '</div>';
-                gameCode += '<div class="text_header">' + 100 + '</div></div>';
-                $('.game-list-data').append(gameCode);*/
-
             }
         });
-        document.getElementByClass("game-list-data").innerHTML = "<div class="game-list-one"  th:each="comment :
-        ${comments}"><div class="text_header" th:text=${comment.nameUser}></div> <div class="text_header"
-        th:text=${comment.text}> </div> <div class="text_header" th:text=${comment.commentTime}> </div> <div
-        class="text_header" th:text=${comment.comment}> </div> <div class="text_header" th:text=${comment.rating}>
-        </div></div>";
-        $.ajax({
+        // To Do
+        /*document.getElementById("game-list-data").value = '<div class="game-list-one"  th:each="comment :
+        ${comments}"><div class="text_header" th:text=${comment.id}></div><div class="text_header" th:text=${comment
+        .name}></div> <div class="text_header" th:text=${comment.text}> </div> <div class="text_header"
+        th:text=${comment.commentTime}> </div> <div class="text_header" th:text=${comment.comment}> </div> <div
+        class="text_header" th:text=${comment.rating}></div></div>';*/
+        /*$.ajax({
             method: "GET",
-            url: '/comments',
+            url: '/comments/',
             success: function(response)
             {
-            /*var documentTypeId = '';*/
                 for (var comment of response)
              {
-                var code = '<div class="text_header">' + comment.name + '</div><div class="text_header">' + comment
-                .text + '</div><div class="text_header">' + comment.commentTime + '</div><div class="text_header">' +
+                *//*var code = '<div class="text_header">' + comment.id + '</div><div class="text_header">' + comment.name +
+                 '</div><div class="text_header">' + comment.text + '</div><div class="text_header">' + comment
+                 .commentTime + '</div><div class="text_header">' +
                  comment.comment + '</div><div class="text_header">' + comment.rating + '</div>';
-                /*<a href="#" class="type-document-link" data-id="' + idDocument +'">' +
-                           response.name + '</a><br>';*/
-                $('.game-list-data').append('<div>' + code + '</div>');}
+                $('#game-list-data').append('<div>' + code + '</div>');*//*}
             }
-            /*,
-            error: function(response)
-            {
-                if(response.status == 404) {
-                    alert('Тип документа не найден!');
-                }
-            }*/
-        });
-         $('#game-list').css({display: 'flex'});
+        });*/
+        localStorage.setItem("myName",name);
+        localStorage.setItem("myPassword",password);
+        localStorage.setItem("myIdName",idName);
+         $('.goHome').css({display: 'flex'});
+          /*$('#game-list').css({display: 'flex'});*/
+           location.reload();
+          }
+
+         }
         totalTasksFinal, correctlyFinal, wrongFinal = 0;
-        /*if(document.getElementById('leftId').value == 0){
-            $('#pageContent').css({display: 'none'});
-            resetGameData();
-            if(name == ""){
-                $('#safeGameResults').css({display: 'none'});
-            }
-            $('#gameResults').css({display: 'flex'});
-            *//*document.getElementById('totalTasksFinalId').value = totalTasksFinal;
-            document.getElementById('correctlyFinalId').value = correctlyFinal;
-            document.getElementById('wrongFinalId').value = wrongFinal;*//*
-        }*/
+
         return false;
     });
-
-    /*function uncheck(){
-        var uncheck = document.getElementsByTagName('input');
-        for(var i=0;i<uncheck.length;i++){
-            if(uncheck[i].type=='checkbox'){
-                uncheck[i].checked=false;
-            }
-        }
-    }*/
-
-    /*$('#safeGameResults').click(function(){
-        document.getElementById('idUserId').value = idName;
-        document.getElementById('nameUserId').value = name;
-        document.getElementById('chatTextId').value = chatText;
-        document.getElementById('commentTimeId').value = formatDate(new Date());
-        document.getElementById('commentId').value = commentText;
-        document.getElementById('ratingId').value = ratingComment;
-        *//*document.getElementById('resultSafeId').value = Math.trunc(correctlyFinal * 100 / totalTasksFinal);
-        document.getElementById('completenessId').value = 100;*//*
-        var dataGame = $('#gameResultsForSafe form').serialize();
-        $.ajax({
-            method: "POST",
-            url: '/games/',
-            data: dataGame,
-            success: function(response){
-                var game = 0;
-                game.id = response;
-                *//*$('#gameResults').css({display: 'none'});*//*
-                var gameCode = '<div class="game-list-one"> <div class="text_header">' + name +
-                '</div>';
-                gameCode += '<div class="text_header">' + formatDate(startTime) + '</div>';
-                gameCode += '<div class="text_header">' + timerFromString(timerTime) + '</div>';
-                gameCode += '<div class="text_header">' + checks.length * maximumNumber + '</div>';
-                gameCode += '<div class="text_header">' + Math.trunc(correctlyFinal * 100 / totalTasksFinal) + '</div>';
-                gameCode += '<div class="text_header">' + 100 + '</div></div>';
-                $('.game-list-data').append(gameCode);
-                $('#game-list').css({display: 'flex'});
-            }
-        });
-        totalTasksFinal, correctlyFinal, wrongFinal = 0;
-        return false;
-    });*/
 
     $('.newGame').click(function(){
-        /*resetGameData();*/
-        /*checks = [];
-        commentText = "";
-        totalTasksFinal, correctlyFinal, wrongFinal = 0;*/
+    if(localStorage.length == 0){
+    /*if(name == "" && password == ""){*/
+        $('#game-list').css({display: 'none'});
+        $('#choiceLogin').css({display: 'flex'});
+    } else {
+        name = localStorage.getItem("myName");
+        password = localStorage.getItem("myPassword");
+        idName = localStorage.getItem("myIdName");
         $('#game-list').css({display: 'none'});
         $('#pageContent').css({display: 'flex'});
+        }
         return false;
     });
 
 
-
-    /*function gameLaunch(){
-        startTime = new Date();
-        timerTime = 0;
-        totalTasks = document.getElementById('numberTasksId').value;
-        document.getElementById('totalTasksId').value = totalTasks;
-        totalTasksFinal = document.getElementById('totalTasksId').value;
-        correctlyFinal = 0;
-        wrongFinal = 0;
-        document.getElementById('correctlyId').value = 0;
-        document.getElementById('wrongId').value = 0;
-        document.getElementById('leftId').value = totalTasksFinal;
-    }*/
-
-    /*function resetGameData(){
-        uncheck();
-        *//*document.querySelectorAll('.partProgress > input').value = "";
-        document.querySelectorAll('.partResults > input').value = "";*//*
-    }*/
 
     function formatDate(date) {
         return date.getFullYear() + '/' +
@@ -378,14 +204,6 @@ $(function(){
         updateTime(date.getHours()) + ':' +
         updateTime(date.getMinutes());
     }
-
-    /*function currentTime() {
-        if(checks.length != 0){
-            timerTime ++;
-            var t = setTimeout(function(){ currentTime() }, 1000); *//* настаиваем таймер *//*
-            document.getElementById('inputTimerId').value = timerFromString(timerTime);
-        }
-    }*/
 
     function timerFromString(timerTime){
         var hour = Math.trunc(timerTime / 60 / 60);
@@ -407,17 +225,6 @@ $(function(){
     }
 
 
-    /*function creatingTask() {
-        taskText = "";
-        firstNumber = getRandomArbitrary(1, maximumNumber);
-        taskText += firstNumber;
-        arithmeticOperation = checks[getRandomArbitrary(0, checks.length)];
-        taskText += arithmeticOperation;
-        secondNumber = getRandomArbitrary(1, maximumNumber);
-        taskText += secondNumber;
-        taskText += " =";
-        document.getElementById('taskTextId').value = taskText;
-    }*/
 
     function getRandomArbitrary(min, max) {
         min = Math.ceil(min);
@@ -426,21 +233,6 @@ $(function(){
         return Math.floor(Math.random() * (max - min)) + min;
     }
 
-   /* function calculationTask() {
-        switch (arithmeticOperation) {
-            case ' * ':
-            resultCorrect = firstNumber * secondNumber;
-            break;
-            case ' + ':
-            resultCorrect = firstNumber + secondNumber;
-            break;
-            case ' - ':
-            resultCorrect = firstNumber - secondNumber;
-            break;
-            default:
-            resultCorrect = firstNumber / secondNumber;
-        }
-    }*/
 });
 
 
